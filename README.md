@@ -22,6 +22,11 @@
 [![Repository files size](https://img.shields.io/badge/dynamic/json.svg?label=Git%20repository%20files%20size&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=repository_file_size&colorB=inactive)]()
 
 
-A simple example how you can add custom badges to gitlab  
+A simple example how you can add custom badges to gitlab based on git commands. 
+
+Badges from GitLab:  
+[![Pipeline](https://gitlab.com/asdoi/gitlab_badges_sample/badges/master/pipeline.svg)]()
+[![Pipeline](https://gitlab.com/asdoi/gitlab_badges_sample/badges/master/coverage.svg?job=coverage)]()
+
 
 Refers to: https://medium.com/@iffi33/adding-custom-badges-to-gitlab-a9af8e3f3569
