@@ -78,7 +78,7 @@ anybadge --value="$latest_release_date_layout2" --label="Last release" --color=g
 anybadge --value="$authorsCount" --label="All contributors" --color=#0B7CBC --file=badges/all_contributors.svg
 anybadge --value="$commits_since_last_release" --label="Commits since last release" --color=purple --file=badges/commits_since_last_release.svg
 anybadge --value="$repository_creation_day" --label="Created on" --color=teal --file=badges/repository_creation_day.svg
-anybadge --value="$time_repository_exists" --label="The repository exists" --color=yellowgreen --file=badges/time_repository_exists.svg
+anybadge --value="$time_repository_exists" --label="The repository exists" --color=#89B702 --file=badges/time_repository_exists.svg
 anybadge --value="$commits_per_second" --label="Commits per second" --color=#0B7CBC --file=badges/commits_per_second.svg
 anybadge --value="$commits_per_minute" --label="Commits per minute" --color=#0B7CBC --file=badges/commits_per_minute.svg
 anybadge --value="$commits_per_hour" --label="Commits per hour" --color=#0B7CBC --file=badges/commits_per_hour.svg
