@@ -16,6 +16,7 @@ echo "Latest release tag (2): $latest_release_tag"
 latest_release_timestamp=$(git log -1 --format=%ct "$latest_release_tag")
 echo "Latest release tag timestamp: $latest_release_timestamp"
 latest_release_date=$(date -d @"$latest_release_timestamp" +"%h %Y")
+latest_release_date_layout2=$(date -d @"$latest_release_timestamp" +%d.%m.%Y)
 
 authors=$(git shortlog -sne)
 authorsCount=$(echo "$authors" | wc -l)
@@ -67,6 +68,7 @@ echo "Last commit hash: $last_commit_hash"
 last_commit_timestamp=$(git show -s --format=%ct "$last_commit_hash")
 echo "Last commit timestamp: $last_commit_timestamp"
 last_commit_date=$(date -d @"$last_commit_timestamp" +"%h %Y")
+last_commit_date_layout2=$(date -d @"$last_commit_timestamp" +%d.%m.%Y)
 
 git gc -q
 git_repository_size=$(du -sh)
@@ -74,4 +76,4 @@ git_repository_size=$(echo "$git_repository_size" | xargs)
 git_file_size=$(du -sh .git/)
 git_file_size=$(echo "$git_file_size" | xargs)
 
-echo "{\"commits\":\"$commits\", \"release_tag\":\"$latest_release_tag\", \"all_contributors\":\"$authorsCount\", \"commits_per_second\":\"$commits_per_second\", \"commits_per_minute\":\"$commits_per_minute\", \"commits_per_hour\":\"$commits_per_hour\",\"commits_per_day\":\"$commits_per_day\", \"commits_per_month\":\"$commits_per_month\", \"commits_per_year\":\"$commits_per_year\",\"commit_activity\":\"$commits_per_month/month\",\"time_repository_exists\":\"$time_repository_exists\", \"repository_creation_day\":\"$repository_creation_day\",\"commits_since_last_release\":\"$commits_since_last_release\",\"last_commit_date\":\"$last_commit_date\", \"last_release_date\":\"$latest_release_date\",\"repository_size\":\"$git_repository_size\", \"repository_file_size\":\"$git_file_size\"}" >badges.json
+echo "{\"commits\":\"$commits\", \"release_tag\":\"$latest_release_tag\", \"all_contributors\":\"$authorsCount\", \"commits_per_second\":\"$commits_per_second\", \"commits_per_minute\":\"$commits_per_minute\", \"commits_per_hour\":\"$commits_per_hour\",\"commits_per_day\":\"$commits_per_day\", \"commits_per_month\":\"$commits_per_month\", \"commits_per_year\":\"$commits_per_year\",\"commit_activity\":\"$commits_per_month/month\",\"time_repository_exists\":\"$time_repository_exists\", \"repository_creation_day\":\"$repository_creation_day\",\"commits_since_last_release\":\"$commits_since_last_release\",\"last_commit_date\":\"$last_commit_date\",\"last_commit_date_layout2\":\"$last_commit_date_layout2\", \"last_release_date\":\"$latest_release_date\",\"last_release_date_layout2\":\"$latest_release_date_layout2\",\"repository_size\":\"$git_repository_size\", \"repository_file_size\":\"$git_file_size\"}" >badges.json
