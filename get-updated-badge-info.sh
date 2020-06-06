@@ -2,22 +2,28 @@
 
 echo "Collecting stats for badges..."
 
+echo "Printing some values for debugging:"
+
 commits=$(git rev-list --all --count)
 
 latest_release_tag=$(git describe --tags "$(git rev-list --tags --max-count=1)")
+echo "Latest release tag (1): $latest_release_tag"
 if [ -z "$latest_release_tag" ]; then
   latest_release_tag=$(git describe --abbrev=0 --tags)
 fi
-echo "Latest release tag: $latest_release_tag"
+echo "Latest release tag (2): $latest_release_tag"
 
 latest_release_timestamp=$(git log -1 --format=%ct "$latest_release_tag")
+echo "Latest release tag timestamp: $latest_release_timestamp"
 latest_release_date=$(date -d @"$latest_release_timestamp" +"%h %Y")
 
 authors=$(git shortlog -sne)
 authorsCount=$(echo "$authors" | wc -l)
 
 first_commit_hash=$(git rev-list --max-parents=0 HEAD)
+echo "First commit hash: $latest_release_timestamp"
 first_commit_timestamp=$(git show -s --format=%ct "$first_commit_hash")
+echo "First commit timestamp: $latest_release_timestamp"
 
 commits_since_last_release_hashes=$(git rev-list "$latest_release_tag"..HEAD)
 commits_since_last_release=$(echo "$commits_since_last_release_hashes" | wc -l)
@@ -57,7 +63,9 @@ commits_per_month=$((commits / difference_in_months))
 commits_per_year=$((commits / difference_in_years))
 
 last_commit_hash=$(git rev-list HEAD^..HEAD)
+echo "Last commit hash: $last_commit_hash"
 last_commit_timestamp=$(git show -s --format=%ct "$last_commit_hash")
+echo "Last commit timestamp: $last_commit_timestamp"
 last_commit_date=$(date -d @"$last_commit_timestamp" +"%h %Y")
 
 git gc -q
