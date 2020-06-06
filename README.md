@@ -1,7 +1,35 @@
 # Custom badges for GitLab
 
+### Generated with anybadge (python library)
+[![Release](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/latest_release.svg)]()
+[![Commits](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/commits.svg)]()
+[![Commits since last release](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/commits_since_last_release.svg)]()
+[![Commit activity](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/commit_activity.svg)]()
+[![All Contributors](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/all_contributors.svg)]()
+
+[![Last release](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/latest_release_date.svg)]()
+[![Last release](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/latest_release_date_layout2.svg)]()
+[![Last commit](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/last_commit_date.svg)]()
+[![Last commit](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/last_commit_date_layout2.svg)]()
+
+[![Commits per year](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/commits_per_year.svg)]()
+[![Commits per month](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/commits_per_month.svg)]()
+[![Commits per day](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/commits_per_day.svg)]()
+[![Commits per hour](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/commits_per_hour.svg)]()
+[![Commits per minute](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/commits_per_minute.svg)]()
+[![Commits per second](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/commits_per_second.svg)]()
+
+[![Day the Repository has been created](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/repository_creation_day.svg)]()
+[![Time the repo exists](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/time_repository_exists.svg)]()
+
+[![Repository size](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/git_repository_size.svg)]()
+[![Repository files size](https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/584450042/artifacts/raw/badges/git_file_size.svg)]()
+
+
+### Generated with shields.io
 [![Release](https://img.shields.io/badge/dynamic/json.svg?label=Release&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=release_tag&colorB=brightgreen&logo=gitlab)]()
 [![Commits](https://img.shields.io/badge/dynamic/json.svg?label=Commits&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commits&colorB=red)]()
+[![Commits since last release](https://img.shields.io/badge/dynamic/json.svg?label=Commits%20since%20last%20release&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commits_since_last_release&colorB=blueviolet)]()
 [![Commit activity](https://img.shields.io/badge/dynamic/json.svg?label=Commit%20activity&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commit_activity&colorB=orange)]()
 [![All Contributors](https://img.shields.io/badge/dynamic/json.svg?label=All%20contributors&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=all_contributors&colorB=blue)]()
 
@@ -9,7 +37,6 @@
 [![Last release](https://img.shields.io/badge/dynamic/json.svg?label=Last%20release&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=last_release_date_layout2&colorB=brightgreen)]()
 [![Last commit](https://img.shields.io/badge/dynamic/json.svg?label=Last%20commit&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=last_commit_date&colorB=red)]()
 [![Last commit](https://img.shields.io/badge/dynamic/json.svg?label=Last%20commit&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=last_commit_date_layout2&colorB=red)]()
-[![Commits since last release](https://img.shields.io/badge/dynamic/json.svg?label=Commits%20since%20last%20release&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commits_since_last_release&colorB=blueviolet)]()
 
 [![Commits per year](https://img.shields.io/badge/dynamic/json.svg?label=Commits%20per%20year&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commits_per_year&colorB=yellowgreen)]()
 [![Commits per month](https://img.shields.io/badge/dynamic/json.svg?label=Commits%20per%20month&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commits_per_month&colorB=yellow)]()
