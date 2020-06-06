@@ -11,6 +11,5 @@ build_badges:
     - ./get-updated-badge-info.sh
   artifacts:
     paths:
-    - public
-  only:
-  - master
+        - badges.json
+    when: always
