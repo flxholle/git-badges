@@ -18,4 +18,5 @@ build_badges:
   artifacts:
     paths:
         - badges.json
+        - badges
     when: always
