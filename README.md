@@ -6,7 +6,9 @@
 [![All Contributors](https://img.shields.io/badge/dynamic/json.svg?label=All%20contributors&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=all_contributors&colorB=blue)]()
 
 [![Last release](https://img.shields.io/badge/dynamic/json.svg?label=Last%20release&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=last_release_date&colorB=brightgreen)]()
+[![Last release](https://img.shields.io/badge/dynamic/json.svg?label=Last%20release&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=last_release_date_layout2&colorB=brightgreen)]()
 [![Last commit](https://img.shields.io/badge/dynamic/json.svg?label=Last%20commit&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=last_commit_date&colorB=red)]()
+[![Last commit](https://img.shields.io/badge/dynamic/json.svg?label=Last%20commit&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=last_commit_date_layout2&colorB=red)]()
 [![Commits since last release](https://img.shields.io/badge/dynamic/json.svg?label=Commits%20since%20last%20release&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commits_since_last_release&colorB=blueviolet)]()
 
 [![Commits per year](https://img.shields.io/badge/dynamic/json.svg?label=Commits%20per%20year&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commits_per_year&colorB=yellowgreen)]()
@@ -23,6 +25,9 @@
 
 
 A simple example how you can add custom badges to gitlab based on git commands. 
+
+# Usage  
+Just copy the whole repository and replace the 'https://gitlab.com/asdoi/' -link in the README.md with the link to your repository.
 
 Badges from GitLab:  
 [![Pipeline](https://gitlab.com/asdoi/gitlab_badges_sample/badges/master/pipeline.svg)]()
