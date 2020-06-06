@@ -35,6 +35,9 @@ fi
 if [ "$difference_in_hours" -eq 0 ]; then
   difference_in_hours=1
 fi
+if [ "$difference_in_days" -eq 0 ]; then
+  difference_in_days=1
+fi
 if [ "$difference_in_months" -eq 0 ]; then
   difference_in_months=1
 fi
@@ -44,6 +47,7 @@ fi
 commits_per_second=$((commits / difference_in_seconds))
 commits_per_minute=$((commits / difference_in_minutes))
 commits_per_hour=$((commits / difference_in_hours))
+commits_per_day=$((commits / difference_in_days))
 commits_per_month=$((commits / difference_in_months))
 commits_per_year=$((commits / difference_in_years))
 
@@ -57,4 +61,4 @@ git_repository_size=$(echo "$git_repository_size" | xargs)
 git_file_size=$(du -sh .git/)
 git_file_size=$(echo "$git_file_size" | xargs)
 
-echo "{\"commits\":\"$commits\", \"release_tag\":\"$latest_release_tag\", \"all_contributors\":\"$authorsCount\", \"commits_per_second\":\"$commits_per_second\", \"commits_per_minute\":\"$commits_per_minute\", \"commits_per_hour\":\"$commits_per_hour\", \"commits_per_month\":\"$commits_per_month\", \"commits_per_year\":\"$commits_per_year\",\"commit_activity\":\"$commits_per_month/month\",\"time_repository_exists\":\"$time_repository_exists\", \"repository_creation_day\":\"$repository_creation_day\",\"commits_since_last_release\":\"$commits_since_last_release\",\"last_commit_date\":\"$last_commit_date\", \"last_release_date\":\"$latest_release_date\",\"repository_size\":\"$git_repository_size\", \"repository_file_size\":\"$git_file_size\"}" >badges.json
+echo "{\"commits\":\"$commits\", \"release_tag\":\"$latest_release_tag\", \"all_contributors\":\"$authorsCount\", \"commits_per_second\":\"$commits_per_second\", \"commits_per_minute\":\"$commits_per_minute\", \"commits_per_hour\":\"$commits_per_hour\",\"commits_per_day\":\"$commits_per_day\", \"commits_per_month\":\"$commits_per_month\", \"commits_per_year\":\"$commits_per_year\",\"commit_activity\":\"$commits_per_month/month\",\"time_repository_exists\":\"$time_repository_exists\", \"repository_creation_day\":\"$repository_creation_day\",\"commits_since_last_release\":\"$commits_since_last_release\",\"last_commit_date\":\"$last_commit_date\", \"last_release_date\":\"$latest_release_date\",\"repository_size\":\"$git_repository_size\", \"repository_file_size\":\"$git_file_size\"}" >badges.json
