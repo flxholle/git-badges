@@ -75,14 +75,14 @@ anybadge --value="$commits" --label="Commits" --color=red --file=badges/commits.
 anybadge --value="$latest_release_tag" --label="Release" --color=green --file=badges/latest_release.svg
 anybadge --value="$latest_release_date" --label="Last release" --color=green --file=badges/latest_release_date.svg
 anybadge --value="$latest_release_date_layout2" --label="Last release" --color=green --file=badges/latest_release_date_layout2.svg
-anybadge --value="$authorsCount" --label="All contributors" --color=blue --file=badges/all_contributors.svg
+anybadge --value="$authorsCount" --label="All contributors" --color=#0B7CBC --file=badges/all_contributors.svg
 anybadge --value="$commits_since_last_release" --label="Commits since last release" --color=purple --file=badges/commits_since_last_release.svg
 anybadge --value="$repository_creation_day" --label="Created on" --color=teal --file=badges/repository_creation_day.svg
 anybadge --value="$time_repository_exists" --label="The repository exists" --color=yellowgreen --file=badges/time_repository_exists.svg
-anybadge --value="$commits_per_second" --label="Commits per second" --color=blue --file=badges/commits_per_second.svg
-anybadge --value="$commits_per_minute" --label="Commits per minute" --color=blue --file=badges/commits_per_minute.svg
-anybadge --value="$commits_per_hour" --label="Commits per hour" --color=blue --file=badges/commits_per_hour.svg
-anybadge --value="$commits_per_day" --label="Commits per day" --color=blue --file=badges/commits_per_day.svg
+anybadge --value="$commits_per_second" --label="Commits per second" --color=#0B7CBC --file=badges/commits_per_second.svg
+anybadge --value="$commits_per_minute" --label="Commits per minute" --color=#0B7CBC --file=badges/commits_per_minute.svg
+anybadge --value="$commits_per_hour" --label="Commits per hour" --color=#0B7CBC --file=badges/commits_per_hour.svg
+anybadge --value="$commits_per_day" --label="Commits per day" --color=#0B7CBC --file=badges/commits_per_day.svg
 anybadge --value="$commits_per_month" --label="Commits per month" --color=yellow --file=badges/commits_per_month.svg
 anybadge --value="$commits_per_year" --label="Commits per year" --color=yellowgreen --file=badges/commits_per_year.svg
 anybadge --value="$commit_activity" --label="Commit activity" --color=orange --file=badges/commit_activity.svg
