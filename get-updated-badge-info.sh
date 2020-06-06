@@ -5,6 +5,11 @@ echo "Collecting stats for badges..."
 commits=$(git rev-list --all --count)
 
 latest_release_tag=$(git describe --tags "$(git rev-list --tags --max-count=1)")
+if [ -z "$latest_release_tag" ]; then
+  latest_release_tag=$(git describe --abbrev=0 --tags)
+fi
+echo "Latest release tag: $latest_release_tag"
+
 latest_release_timestamp=$(git log -1 --format=%ct "$latest_release_tag")
 latest_release_date=$(date -d @"$latest_release_timestamp" +"%h %Y")
 
