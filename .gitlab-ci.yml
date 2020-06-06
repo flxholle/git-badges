@@ -6,7 +6,10 @@ stages:
 
 build_badges:
   stage: build
+  image: python:3.6.6
   before_script:
+    - apt-get update -qy
+    - pip install anybadge
     - chmod +x get-updated-badge-info.sh
   script:
     - echo "Some script to build your code"

@@ -51,6 +51,7 @@ commits_per_minute=$((commits / difference_in_minutes))
 commits_per_hour=$((commits / difference_in_hours))
 commits_per_day=$((commits / difference_in_days))
 commits_per_month=$((commits / difference_in_months))
+commit_activity="$commits_per_month/month"
 commits_per_year=$((commits / difference_in_years))
 
 last_commit_hash=$(git rev-list HEAD^..HEAD --max-count=1)
@@ -65,4 +66,27 @@ git_repository_size=$(echo "$git_repository_size" | xargs)
 git_file_size=$(du -sh .git/)
 git_file_size=$(echo "$git_file_size" | xargs)
 
-echo "{\"commits\":\"$commits\", \"release_tag\":\"$latest_release_tag\", \"all_contributors\":\"$authorsCount\", \"commits_per_second\":\"$commits_per_second\", \"commits_per_minute\":\"$commits_per_minute\", \"commits_per_hour\":\"$commits_per_hour\",\"commits_per_day\":\"$commits_per_day\", \"commits_per_month\":\"$commits_per_month\", \"commits_per_year\":\"$commits_per_year\",\"commit_activity\":\"$commits_per_month/month\",\"time_repository_exists\":\"$time_repository_exists\", \"repository_creation_day\":\"$repository_creation_day\",\"commits_since_last_release\":\"$commits_since_last_release\",\"last_commit_date\":\"$last_commit_date\",\"last_commit_date_layout2\":\"$last_commit_date_layout2\", \"last_release_date\":\"$latest_release_date\",\"last_release_date_layout2\":\"$latest_release_date_layout2\",\"repository_size\":\"$git_repository_size\", \"repository_file_size\":\"$git_file_size\"}" >badges.json
+echo "{\"commits\":\"$commits\", \"release_tag\":\"$latest_release_tag\", \"all_contributors\":\"$authorsCount\", \"commits_per_second\":\"$commits_per_second\", \"commits_per_minute\":\"$commits_per_minute\", \"commits_per_hour\":\"$commits_per_hour\",\"commits_per_day\":\"$commits_per_day\", \"commits_per_month\":\"$commits_per_month\", \"commits_per_year\":\"$commits_per_year\",\"commit_activity\":\"$commit_activity\",\"time_repository_exists\":\"$time_repository_exists\", \"repository_creation_day\":\"$repository_creation_day\",\"commits_since_last_release\":\"$commits_since_last_release\",\"last_commit_date\":\"$last_commit_date\",\"last_commit_date_layout2\":\"$last_commit_date_layout2\", \"last_release_date\":\"$latest_release_date\",\"last_release_date_layout2\":\"$latest_release_date_layout2\",\"repository_size\":\"$git_repository_size\", \"repository_file_size\":\"$git_file_size\"}" >badges.json
+
+echo "Generating anybadge badges..."
+
+mkdir -p badges
+anybadge --value="$commits" --label="Commits" --color=red --file=badges/commits.svg
+anybadge --value="$latest_release_tag" --label="Release" --color=green --file=badges/latest_release.svg
+anybadge --value="$latest_release_date" --label="Last release" --color=green --file=badges/latest_release_date.svg
+anybadge --value="$latest_release_date_layout2" --label="Last release" --color=green --file=badges/latest_release_date_layout2.svg
+anybadge --value="$authorsCount" --label="All contributors" --color=blue --file=badges/all_contributors.svg
+anybadge --value="$commits_since_last_release" --label="Commits since last release" --color=purple --file=badges/commits_since_last_release.svg
+anybadge --value="$repository_creation_day" --label="Created on" --color=teal --file=badges/repository_creation_day.svg
+anybadge --value="$time_repository_exists" --label="The repository exists" --color=yellowgreen --file=badges/time_repository_exists.svg
+anybadge --value="$commits_per_second" --label="Commits per second" --color=blue --file=badges/commits_per_second.svg
+anybadge --value="$commits_per_minute" --label="Commits per minute" --color=blue --file=badges/commits_per_minute.svg
+anybadge --value="$commits_per_hour" --label="Commits per hour" --color=blue --file=badges/commits_per_hour.svg
+anybadge --value="$commits_per_day" --label="Commits per day" --color=blue --file=badges/commits_per_day.svg
+anybadge --value="$commits_per_month" --label="Commits per month" --color=yellow --file=badges/commits_per_month.svg
+anybadge --value="$commits_per_year" --label="Commits per year" --color=yellowgreen --file=badges/commits_per_year.svg
+anybadge --value="$commit_activity" --label="Commit activity" --color=orange --file=badges/commit_activity.svg
+anybadge --value="$last_commit_date" --label="Last commit" --color=red --file=badges/last_commit_date.svg
+anybadge --value="$last_commit_date_layout2" --label="Last commit" --color=red --file=badges/last_commit_date_layout2.svg
+anybadge --value="$git_repository_size" --label="Git repository size" --color=lightgrey --file=badges/git_repository_size.svg
+anybadge --value="$git_file_size" --label="Git repository files size" --color=lightgrey --file=badges/git_file_size.svg
