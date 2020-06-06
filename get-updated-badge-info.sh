@@ -57,11 +57,4 @@ git_repository_size=$(echo "$git_repository_size" | xargs)
 git_file_size=$(du -sh .git/)
 git_file_size=$(echo "$git_file_size" | xargs)
 
-echo "{\"commits\":\"$commits\", \"release_tag\":\"$latest_release_tag\", \"all_contributors\":\"$authorsCount\",
- \"commits_per_second\":\"$commits_per_second\", \"commits_per_minute\":\"$commits_per_minute\", \"commits_per_hour\":\"$commits_per_hour\", \"commits_per_month\":\"$commits_per_month\", \"commits_per_year\":\"$commits_per_year\",
- \"commit_activity\":\"$commits_per_month/month\",
- \"time_repository_exists\":\"$time_repository_exists\", \"repository_creation_day\":\"$repository_creation_day\",
- \"commits_since_last_release\":\"$commits_since_last_release\",
- \"last_commit_date\":\"$last_commit_date\", \"last_release_date\":\"$latest_release_date\",
- \"repository_size\":\"$git_repository_size\", \"repository_file_size\":\"$git_file_size\",
- }" >badges.json
+echo "{\"commits\":\"$commits\", \"release_tag\":\"$latest_release_tag\", \"all_contributors\":\"$authorsCount\", \"commits_per_second\":\"$commits_per_second\", \"commits_per_minute\":\"$commits_per_minute\", \"commits_per_hour\":\"$commits_per_hour\", \"commits_per_month\":\"$commits_per_month\", \"commits_per_year\":\"$commits_per_year\",\"commit_activity\":\"$commits_per_month/month\",\"time_repository_exists\":\"$time_repository_exists\", \"repository_creation_day\":\"$repository_creation_day\",\"commits_since_last_release\":\"$commits_since_last_release\",\"last_commit_date\":\"$last_commit_date\", \"last_release_date\":\"$latest_release_date\",\"repository_size\":\"$git_repository_size\", \"repository_file_size\":\"$git_file_size\"}" >badges.json
