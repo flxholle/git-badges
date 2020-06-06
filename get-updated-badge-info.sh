@@ -1,17 +1,14 @@
 #!/bin/bash
 
 echo "Collecting stats for badges..."
+#git fetch --prune --unshallow
 
 echo "Printing some values for debugging:"
 
 commits=$(git rev-list --all --count)
 
-latest_release_tag=$(git describe --tags "$(git rev-list --tags --max-count=1)")
-echo "Latest release tag (1): $latest_release_tag"
-if [ -z "$latest_release_tag" ]; then
-  latest_release_tag=$(git describe --abbrev=0 --tags)
-fi
-echo "Latest release tag (2): $latest_release_tag"
+latest_release_tag=$(git describe --tags --always "$(git rev-list --tags --max-count=1)")
+echo "Latest release tag: $latest_release_tag"
 
 latest_release_timestamp=$(git log -1 --format=%ct "$latest_release_tag")
 echo "Latest release tag timestamp: $latest_release_timestamp"
@@ -22,9 +19,9 @@ authors=$(git shortlog -sne)
 authorsCount=$(echo "$authors" | wc -l)
 
 first_commit_hash=$(git rev-list --max-parents=0 HEAD)
-echo "First commit hash: $latest_release_timestamp"
+echo "First commit hash: $first_commit_hash"
 first_commit_timestamp=$(git show -s --format=%ct "$first_commit_hash")
-echo "First commit timestamp: $latest_release_timestamp"
+echo "First commit timestamp: $first_commit_timestamp"
 
 commits_since_last_release_hashes=$(git rev-list "$latest_release_tag"..HEAD)
 commits_since_last_release=$(echo "$commits_since_last_release_hashes" | wc -l)
