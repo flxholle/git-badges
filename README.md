@@ -45,7 +45,7 @@
 [![Commits per minute](https://img.shields.io/badge/dynamic/json.svg?label=Commits%20per%20minute&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commits_per_minute&colorB=informational)]()
 [![Commits per second](https://img.shields.io/badge/dynamic/json.svg?label=Commits%20per%20second&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commits_per_second&colorB=informational)]()
 
-[![Day the Repository has been created](https://img.shields.io/badge/dynamic/json.svg?label=Created%20on&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=repository_creation_day&colorB=9cf)]()
+[![Day the Repository has been created](https://img.shields.io/badge/dynamic/json.svg?label=Created%20on&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=repository_creation_day&colorB=teal)]()
 [![Time the repo exists](https://img.shields.io/badge/dynamic/json.svg?label=The%20repository%20exists&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=time_repository_exists&colorB=green)]()
 
 [![Repository size](https://img.shields.io/badge/dynamic/json.svg?label=Git%20repository%20size&url=https://gitlab.com/asdoi/gitlab_badges_sample/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=repository_size&colorB=inactive)]()
