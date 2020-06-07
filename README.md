@@ -1,6 +1,6 @@
-# Custom badges for GitLab
+# Custom badges made only with git commands
 
-### Generated with anybadge (python library)
+### Generated with anybadge as .svg (python library)
 [![Release](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/latest_release.svg?job=build_badges)]()
 [![Commits](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/commits.svg?job=build_badges)]()
 [![Commits since last release](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/commits_since_last_release.svg?job=build_badges)]()
@@ -74,14 +74,9 @@
 [![Repository files size](https://img.shields.io/badge/dynamic/json.svg?label=Git%20repository%20files%20size&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=repository_file_size&colorB=inactive)]()
 
 
-A simple example how you can create custom badges based on git commands. 
 
 # Usage  
 Just copy the whole repository and replace the 'https://gitlab.com/asdoi/git_badges' -link in the README.md with the link to your repository.
-
-Badges from GitLab:  
-[![Pipeline](https://gitlab.com/asdoi/git_badges/badges/master/pipeline.svg)]()
-[![Pipeline](https://gitlab.com/asdoi/git_badges/badges/master/coverage.svg?job=coverage)]()
 
 
 Refers to: https://medium.com/@iffi33/adding-custom-badges-to-gitlab-a9af8e3f3569
