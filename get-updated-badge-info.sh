@@ -11,7 +11,7 @@ latest_release_date=$(date -d @"$latest_release_timestamp" +"%h %Y")
 latest_release_date_layout2=$(date -d @"$latest_release_timestamp" +%d.%m.%Y)
 
 authors=$(git shortlog -sne)
-authorsCount=$(echo "$authors" | wc -l)
+authorsCount=$(echo "$authors" | sed '/^\s*$/d' | wc -l)
 
 first_commit_hash=$(git rev-list --max-parents=0 HEAD --max-count=1)
 first_commit_timestamp=$(git show -s --format=%ct "$first_commit_hash")
@@ -62,9 +62,11 @@ last_commit_date_layout2=$(date -d @"$last_commit_timestamp" +%d.%m.%Y)
 
 git gc -q
 git_repository_size=$(du -sh)
+git_repository_size=$(echo "$git_repository_size" | xargs)
 #git_repository_size=${git_repository_size//[[:blank:]]/} || echo "$git_repository_size"
 #git_repository_size=${git_repository_size//" ."/} || echo "$git_repository_size"
 git_file_size=$(du -sh .git/)
+git_file_size=$(echo "$git_file_size" | xargs)
 #git_file_size=${git_file_size//[[:blank:]]/} || echo "$git_file_size"
 #git_file_size=${git_file_size//" .git/"/} || echo "$git_file_size"
 
