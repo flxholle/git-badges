@@ -55,7 +55,7 @@
 A simple example how you can create custom badges based on git commands. 
 
 # Usage  
-Just copy the whole repository and replace the 'https://gitlab.com/asdoi/' -link in the README.md with the link to your repository.
+Just copy the whole repository and replace the 'https://gitlab.com/asdoi/git_badges' -link in the README.md with the link to your repository.
 
 Badges from GitLab:  
 [![Pipeline](https://gitlab.com/asdoi/git_badges/badges/master/pipeline.svg)]()
