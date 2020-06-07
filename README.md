@@ -43,7 +43,7 @@
 [![Commits since last release](https://img.shields.io/badge/dynamic/json.svg?label=Commits%20since%20last%20release&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commits_since_last_release&colorB=blueviolet)]()
 
 [![Commit activity](https://img.shields.io/badge/dynamic/json.svg?label=Commit%20activity&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=commit_activity&colorB=orange)]()
-[![Releases activity](https://img.shields.io/badge/dynamic/json.svg?label=Releases%20activity&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=releases_activity&colorB=orange)]()
+[![Releases activity](https://img.shields.io/badge/dynamic/json.svg?label=Release%20activity&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=releases_activity&colorB=orange)]()
 [![Releases](https://img.shields.io/badge/dynamic/json.svg?label=Releases&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=releases_amount&colorB=800000)]()
 [![Contributors](https://img.shields.io/badge/dynamic/json.svg?label=Contributors&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=contributors&colorB=blue)]()
 [![All Contributors](https://img.shields.io/badge/dynamic/json.svg?label=All%20contributors&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=all_contributors&colorB=blue)]()
