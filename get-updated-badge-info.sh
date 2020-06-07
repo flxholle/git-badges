@@ -11,7 +11,7 @@ latest_release_date=$(date -d @"$latest_release_timestamp" +"%h %Y")
 latest_release_date_layout2=$(date -d @"$latest_release_timestamp" +%d.%m.%Y)
 
 authors=$(git shortlog -sne)
-authorsCount=$(echo "$authors" | sed '/^\s*$/d' | wc -l)
+authorsCount=$(echo "$authors" | wc -l)
 
 first_commit_hash=$(git rev-list --max-parents=0 HEAD --max-count=1)
 first_commit_timestamp=$(git show -s --format=%ct "$first_commit_hash")
