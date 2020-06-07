@@ -17,7 +17,7 @@ first_commit_hash=$(git rev-list --max-parents=0 HEAD --max-count=1)
 first_commit_timestamp=$(git show -s --format=%ct "$first_commit_hash")
 
 commits_since_last_release_hashes=$(git rev-list "$latest_release_tag"..HEAD)
-commits_since_last_release=$(echo "$commits_since_last_release_hashes" | wc -l)
+commits_since_last_release=$(echo "$commits_since_last_release_hashes" | sed '/^\s*$/d' | wc -l)
 
 repository_creation_day_timestamp=$(git show -s --format=%ct "$first_commit_hash")
 repository_creation_day=$(date -d @"$repository_creation_day_timestamp" +%d.%m.%Y)
@@ -62,15 +62,18 @@ last_commit_date_layout2=$(date -d @"$last_commit_timestamp" +%d.%m.%Y)
 
 git gc -q
 git_repository_size=$(du -sh)
-git_repository_size=$(echo "$git_repository_size" | xargs)
+#git_repository_size=${git_repository_size//[[:blank:]]/} || echo "$git_repository_size"
+#git_repository_size=${git_repository_size//" ."/} || echo "$git_repository_size"
 git_file_size=$(du -sh .git/)
-git_file_size=$(echo "$git_file_size" | xargs)
+#git_file_size=${git_file_size//[[:blank:]]/} || echo "$git_file_size"
+#git_file_size=${git_file_size//" .git/"/} || echo "$git_file_size"
 
 echo "{\"commits\":\"$commits\", \"release_tag\":\"$latest_release_tag\", \"all_contributors\":\"$authorsCount\", \"commits_per_second\":\"$commits_per_second\", \"commits_per_minute\":\"$commits_per_minute\", \"commits_per_hour\":\"$commits_per_hour\",\"commits_per_day\":\"$commits_per_day\", \"commits_per_month\":\"$commits_per_month\", \"commits_per_year\":\"$commits_per_year\",\"commit_activity\":\"$commit_activity\",\"time_repository_exists\":\"$time_repository_exists\", \"repository_creation_day\":\"$repository_creation_day\",\"commits_since_last_release\":\"$commits_since_last_release\",\"last_commit_date\":\"$last_commit_date\",\"last_commit_date_layout2\":\"$last_commit_date_layout2\", \"last_release_date\":\"$latest_release_date\",\"last_release_date_layout2\":\"$latest_release_date_layout2\",\"repository_size\":\"$git_repository_size\", \"repository_file_size\":\"$git_file_size\"}" >badges.json
 
 echo "Generating anybadge badges..."
 
 mkdir -p badges
+rm -rf badges/*
 anybadge --value="$commits" --label="Commits" --color=red --file=badges/commits.svg
 anybadge --value="$latest_release_tag" --label="Release" --color=green --file=badges/latest_release.svg
 anybadge --value="$latest_release_date" --label="Last release" --color=green --file=badges/latest_release_date.svg
