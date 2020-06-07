@@ -13,6 +13,9 @@ latest_release_date_layout2=$(date -d @"$latest_release_timestamp" +%d.%m.%Y)
 authors=$(git shortlog -sne)
 authorsCount=$(echo "$authors" | wc -l)
 
+authorsAll=$(git shortlog -sne --all)
+authorsAllCount=$(echo "$authorsAll" | wc -l)
+
 first_commit_hash=$(git rev-list --max-parents=0 HEAD --max-count=1)
 first_commit_timestamp=$(git show -s --format=%ct "$first_commit_hash")
 
@@ -54,6 +57,17 @@ commits_per_month=$((commits / difference_in_months))
 commit_activity="$commits_per_month/month"
 commits_per_year=$((commits / difference_in_years))
 
+releases_names=$(git tag)
+releases_amount=$(echo "$releases_names" | sed '/^\s*$/d' | wc -l)
+
+releases_per_second=$((releases_amount / difference_in_seconds))
+releases_per_minute=$((releases_amount / difference_in_minutes))
+releases_per_hour=$((releases_amount / difference_in_hours))
+releases_per_day=$((releases_amount / difference_in_days))
+releases_per_month=$((releases_amount / difference_in_months))
+releases_activity="$releases_per_month/month"
+releases_per_year=$((releases_amount / difference_in_years))
+
 last_commit_hash=$(git rev-list HEAD^..HEAD --max-count=1)
 last_commit_timestamp=$(git show -s --format=%ct "$last_commit_hash")
 
@@ -70,7 +84,7 @@ git_file_size=$(echo "$git_file_size" | xargs)
 #git_file_size=${git_file_size//[[:blank:]]/} || echo "$git_file_size"
 #git_file_size=${git_file_size//" .git/"/} || echo "$git_file_size"
 
-echo "{\"commits\":\"$commits\", \"release_tag\":\"$latest_release_tag\", \"all_contributors\":\"$authorsCount\", \"commits_per_second\":\"$commits_per_second\", \"commits_per_minute\":\"$commits_per_minute\", \"commits_per_hour\":\"$commits_per_hour\",\"commits_per_day\":\"$commits_per_day\", \"commits_per_month\":\"$commits_per_month\", \"commits_per_year\":\"$commits_per_year\",\"commit_activity\":\"$commit_activity\",\"time_repository_exists\":\"$time_repository_exists\", \"repository_creation_day\":\"$repository_creation_day\",\"commits_since_last_release\":\"$commits_since_last_release\",\"last_commit_date\":\"$last_commit_date\",\"last_commit_date_layout2\":\"$last_commit_date_layout2\", \"last_release_date\":\"$latest_release_date\",\"last_release_date_layout2\":\"$latest_release_date_layout2\",\"repository_size\":\"$git_repository_size\", \"repository_file_size\":\"$git_file_size\"}" >badges.json
+echo "{\"commits\":\"$commits\", \"release_tag\":\"$latest_release_tag\", \"releases_amount\":\"$releases_amount\", \"contributors\":\"$authorsCount\", \"all_contributors\":\"$authorsAllCount\", \"commits_per_second\":\"$commits_per_second\", \"commits_per_minute\":\"$commits_per_minute\", \"commits_per_hour\":\"$commits_per_hour\",\"commits_per_day\":\"$commits_per_day\", \"commits_per_month\":\"$commits_per_month\", \"commits_per_year\":\"$commits_per_year\",\"commit_activity\":\"$commit_activity\",\"time_repository_exists\":\"$time_repository_exists\", \"repository_creation_day\":\"$repository_creation_day\",\"commits_since_last_release\":\"$commits_since_last_release\",\"last_commit_date\":\"$last_commit_date\",\"last_commit_date_layout2\":\"$last_commit_date_layout2\", \"last_release_date\":\"$latest_release_date\",\"last_release_date_layout2\":\"$latest_release_date_layout2\",\"repository_size\":\"$git_repository_size\", \"repository_file_size\":\"$git_file_size\", \"releases_per_second\":\"$releases_per_second\", \"releases_per_minute\":\"$releases_per_minute\", \"releases_per_hour\":\"$releases_per_hour\",\"releases_per_day\":\"$releases_per_day\", \"releases_per_month\":\"$releases_per_month\", \"releases_per_year\":\"$releases_per_year\",\"releases_activity\":\"$releases_activity\"}" >badges.json
 
 echo "Generating anybadge badges..."
 
@@ -80,7 +94,8 @@ anybadge --value="$commits" --label="Commits" --color=red --file=badges/commits.
 anybadge --value="$latest_release_tag" --label="Release" --color=green --file=badges/latest_release.svg
 anybadge --value="$latest_release_date" --label="Last release" --color=green --file=badges/latest_release_date.svg
 anybadge --value="$latest_release_date_layout2" --label="Last release" --color=green --file=badges/latest_release_date_layout2.svg
-anybadge --value="$authorsCount" --label="All contributors" --color=#0B7CBC --file=badges/all_contributors.svg
+anybadge --value="$authorsAllCount" --label="All contributors" --color=#0B7CBC --file=badges/all_contributors.svg
+anybadge --value="$authorsCount" --label="Contributors" --color=#0B7CBC --file=badges/contributors.svg
 anybadge --value="$commits_since_last_release" --label="Commits since last release" --color=purple --file=badges/commits_since_last_release.svg
 anybadge --value="$repository_creation_day" --label="Created on" --color=teal --file=badges/repository_creation_day.svg
 anybadge --value="$time_repository_exists" --label="The repository exists" --color=#89B702 --file=badges/time_repository_exists.svg
@@ -95,3 +110,11 @@ anybadge --value="$last_commit_date" --label="Last commit" --color=red --file=ba
 anybadge --value="$last_commit_date_layout2" --label="Last commit" --color=red --file=badges/last_commit_date_layout2.svg
 anybadge --value="$git_repository_size" --label="Git repository size" --color=lightgrey --file=badges/git_repository_size.svg
 anybadge --value="$git_file_size" --label="Git repository files size" --color=lightgrey --file=badges/git_file_size.svg
+anybadge --value="$releases_per_second" --label="Releases per second" --color=#0B7CBC --file=badges/releases_per_second.svg
+anybadge --value="$releases_per_minute" --label="Releases per minute" --color=#0B7CBC --file=badges/releases_per_minute.svg
+anybadge --value="$releases_per_hour" --label="Releases per hour" --color=#0B7CBC --file=badges/releases_per_hour.svg
+anybadge --value="$releases_per_day" --label="Releases per day" --color=#0B7CBC --file=badges/releases_per_day.svg
+anybadge --value="$releases_per_month" --label="Releases per month" --color=yellow --file=badges/releases_per_month.svg
+anybadge --value="$releases_per_year" --label="Releases per year" --color=yellowgreen --file=badges/releases_per_year.svg
+anybadge --value="$releases_activity" --label="Releases activity" --color=orange --file=badges/releases_activity.svg
+anybadge --value="$releases_amount" --label="Releases" --color=maroon --file=badges/releases_amount.svg
