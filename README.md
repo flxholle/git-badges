@@ -52,7 +52,7 @@
 [![Repository files size](https://img.shields.io/badge/dynamic/json.svg?label=Git%20repository%20files%20size&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=repository_file_size&colorB=inactive)]()
 
 
-A simple example how you can add custom badges to gitlab based on git commands. 
+A simple example how you can create custom badges based on git commands. 
 
 # Usage  
 Just copy the whole repository and replace the 'https://gitlab.com/asdoi/' -link in the README.md with the link to your repository.
