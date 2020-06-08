@@ -74,8 +74,8 @@
 
 
 ### Usage  
-Just copy the whole repository and replace the 'https://gitlab.com/asdoi/git_badges' -link in the README.md with the link to your repository.
-Refer to: https://medium.com/@iffi33/adding-custom-badges-to-gitlab-a9af8e3f3569
+Copy the whole repository into your own one and replace this part `https://gitlab.com/asdoi/gitlab-badges/-/jobs/artifacts/all/` in the image links with the links to your repository, if you use gitlab, too.  
+Otherwise you can setup a pre_commit hook to run the `get-updated-badge-info.sh` and change all image links to the files in your repository.
 
 
 ### Deprecated (Non-static):
