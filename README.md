@@ -1,4 +1,4 @@
-# Custom badges made only with git commands
+# Static badges based on git commands
 
 ### Generated with anybadge as .svg (python library)
 [![Release](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/latest_release.svg?job=build_badges)]()
@@ -31,10 +31,6 @@
 [![Releases per second](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/releases_per_second.svg?job=build_badges)]()
 
 [![Day the Repository has been created](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/repository_creation_day.svg?job=build_badges)]()
-[![Time the repo exists](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/time_repository_exists.svg?job=build_badges)]()
-
-[![Repository size](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/git_repository_size.svg?job=build_badges)]()
-[![Repository files size](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/git_file_size.svg?job=build_badges)]()
 
 
 ### Generated with shields.io
@@ -68,15 +64,20 @@
 [![Releases per second](https://img.shields.io/badge/dynamic/json.svg?label=Releases%20per%20second&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=releases_per_second&colorB=informational)]()
 
 [![Day the Repository has been created](https://img.shields.io/badge/dynamic/json.svg?label=Created%20on&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=repository_creation_day&colorB=teal)]()
-[![Time the repo exists](https://img.shields.io/badge/dynamic/json.svg?label=The%20repository%20exists&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=time_repository_exists&colorB=green)]()
 
+
+### Help needed:
+[![Repository size](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/git_repository_size.svg?job=build_badges)]()
+[![Repository files size](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/git_file_size.svg?job=build_badges)]()  
 [![Repository size](https://img.shields.io/badge/dynamic/json.svg?label=Git%20repository%20size&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=repository_size&colorB=inactive)]()
 [![Repository files size](https://img.shields.io/badge/dynamic/json.svg?label=Git%20repository%20files%20size&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=repository_file_size&colorB=inactive)]()
 
 
-
-# Usage  
+### Usage  
 Just copy the whole repository and replace the 'https://gitlab.com/asdoi/git_badges' -link in the README.md with the link to your repository.
+Refer to: https://medium.com/@iffi33/adding-custom-badges-to-gitlab-a9af8e3f3569
 
 
-Refers to: https://medium.com/@iffi33/adding-custom-badges-to-gitlab-a9af8e3f3569
+### Deprecated (Non-static):
+[![Time the repo exists](https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges/time_repository_exists.svg?job=build_badges)]()
+[![Time the repo exists](https://img.shields.io/badge/dynamic/json.svg?label=The%20repository%20exists&url=https://gitlab.com/asdoi/git_badges/-/jobs/artifacts/master/raw/badges.json?job=build_badges&query=time_repository_exists&colorB=green)]()
